@@ -1,3 +1,9 @@
+Players.LocalPlayer.OnTeleport:Connect(function(State)
+	if not (TeleportCheck) then
+		queueteleport("loadstring(game:HttpGet(https://github.com/zakkinajp-cyber/nothing/raw/refs/heads/main/a.lua))()")
+		TeleportCheck = true
+	end
+end)
 
 wait(8)
 str = tostring("実行されたスクリプトを介してゲームのプレイ方法を学習しながら、人工知能エージェントと対戦します。")
@@ -22,17 +28,26 @@ else
 end
 TeleportCheck = false
 wait(2)
-str4 = tostring("English: It is currently rated \"Bronze 3\" in Ranked, on the main account.")
+str4 = tostring("English: It is currently rated \"Bronze 2\" in Ranked, on the main account.")
 if not isLegacyChat then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
 else
     ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
 end
 TeleportCheck = false
-
-Players.LocalPlayer.OnTeleport:Connect(function(State)
-	if not (TeleportCheck) then
-		queueteleport("loadstring(game:HttpGet(https://github.com/zakkinajp-cyber/nothing/raw/refs/heads/main/a.lua))()")
-		TeleportCheck = true
-	end
-end)
+rand = math.round(math.random(1, 64))
+wait(2)
+str4 = tostring('Instance ' .. tostring(rand) .. "/64")
+if not isLegacyChat then
+    TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
+else
+    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
+end
+rand2 = math.round(math.random(1, 14))
+wait(2)
+str4 = tostring('Account index: ' .. tostring(rand2) .. "_b_" .. Players.LocalPlayer.Name)
+if not isLegacyChat then
+    TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
+else
+    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
+end
