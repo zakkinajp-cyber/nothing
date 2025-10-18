@@ -1,5 +1,5 @@
 
-wait(1)
+wait(8)
 str = tostring("実行されたスクリプトを介してゲームのプレイ方法を学習しながら、人工知能エージェントと対戦します。")
 if not isLegacyChat then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str)
@@ -13,6 +13,14 @@ if not isLegacyChat then
 else
     ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All")
 end
+wait(2)
+str = tostring("English: It is currently rated \"Bronze 3\" in Ranked, on the main account.")
+if not isLegacyChat then
+    TextChatService.TextChannels.RBXGeneral:SendAsync(str)
+else
+    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All")
+end
+
 
 Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if KeepInfYield and (not TeleportCheck) and queueteleport then
