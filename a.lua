@@ -62,9 +62,7 @@ else
 end
 
 wait(2)
-str4 = tostring('test')
-if not isLegacyChat then
+str4 = tostring('Detected unsupported map index: []')
+if not isLegacyChat and ((workspace.Arena) or (workspace.Construction)) then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
-else
-    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
 end
