@@ -31,7 +31,7 @@ else
 end
 TeleportCheck = false
 wait(2)
-str4 = tostring("English: It is currently rated \"Bronze 2\" in Ranked, on the main account.")
+str4 = tostring("English: It is currently rated \"Bronze 3\" in Ranked, on the main account.")
 if not isLegacyChat then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
 else
