@@ -4,6 +4,7 @@ print("Place name:", game.Name)
 
 TeleportCheck=false
 KeepClientChat = true -- Not need.
+wait(1)
 print("connecting")
 rq = (queueteleport and true)
 print(tostring(rq))
