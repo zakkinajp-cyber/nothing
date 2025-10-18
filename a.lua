@@ -1,6 +1,6 @@
 if not game:IsLoaded() then game.Loaded:Wait() end
 print("Place name:", game.Name)
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 
 TeleportCheck=false
 KeepClientChat = true -- Not need.
