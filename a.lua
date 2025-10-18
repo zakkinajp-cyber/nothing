@@ -1,3 +1,4 @@
+print("connecting")
 Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if not (TeleportCheck) then
 		queueteleport("loadstring(game:HttpGet(https://github.com/zakkinajp-cyber/nothing/raw/refs/heads/main/a.lua))()")
