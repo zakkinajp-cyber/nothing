@@ -7,18 +7,26 @@ else
     ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All")
 end
 wait(2)
-str = tostring("English: You are playing against an Artificial Intelligence client, learning how to play the game with vision and key inputs only.")
+str2 = tostring("English: You are playing against an Artificial Intelligence client, learning how to play the game with vision and key inputs only.")
 if not isLegacyChat then
-    TextChatService.TextChannels.RBXGeneral:SendAsync(str)
+    TextChatService.TextChannels.RBXGeneral:SendAsync(str2)
 else
-    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All")
+    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str2, "All")
 end
 wait(2)
-str = tostring("English: It is currently rated \"Bronze 3\" in Ranked, on the main account.")
+str3 = tostring("ボットのランキングは、メインアカウントではブロンズ 3 です。1")
 if not isLegacyChat then
-    TextChatService.TextChannels.RBXGeneral:SendAsync(str)
+    TextChatService.TextChannels.RBXGeneral:SendAsync(str3)
 else
-    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All")
+    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str3, "All")
+end
+TeleportCheck = false
+wait(2)
+str4 = tostring("English: It is currently rated \"Bronze 3\" in Ranked, on the main account.")
+if not isLegacyChat then
+    TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
+else
+    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
 end
 TeleportCheck = false
 
