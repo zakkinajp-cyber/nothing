@@ -1,3 +1,6 @@
+if not game:IsLoaded() then game.Loaded:Wait() end
+
+
 TeleportCheck=false
 KeepClientChat = true -- Not need.
 print("connecting")
@@ -10,7 +13,6 @@ Players.LocalPlayer.OnTeleport:Connect(function(State)
 		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/zakkinajp-cyber/nothing/main/a.lua'))()")
 	end
 end)
-
 wait(8)
 str = tostring("実行されたスクリプトを介してゲームのプレイ方法を学習しながら、人工知能エージェントと対戦します。")
 if not isLegacyChat then
