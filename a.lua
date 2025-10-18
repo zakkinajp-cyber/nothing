@@ -1,4 +1,5 @@
 if not game:IsLoaded() then game.Loaded:Wait() end
+print("Place name:", game.Name)
 
 
 TeleportCheck=false
@@ -54,6 +55,14 @@ end
 rand2 = math.round(math.random(1, 14))
 wait(2)
 str4 = tostring('Account index: ' .. tostring(rand2) .. "_b_" .. Players.LocalPlayer.Name)
+if not isLegacyChat then
+    TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
+else
+    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
+end
+
+wait(2)
+str4 = tostring('test')
 if not isLegacyChat then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
 else
