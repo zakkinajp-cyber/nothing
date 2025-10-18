@@ -1,8 +1,10 @@
+TeleportCheck=false
+KeepClientChat = true -- Not need.
 print("connecting")
 Players.LocalPlayer.OnTeleport:Connect(function(State)
-	if not (TeleportCheck) then
-		queueteleport("loadstring(game:HttpGet(https://github.com/zakkinajp-cyber/nothing/raw/refs/heads/main/a.lua))()")
+	if KeepClientChat and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
+		queueteleport("loadstring(game:HttpGet('https://github.com/zakkinajp-cyber/nothing/raw/refs/heads/main/a.lua'))()")
 	end
 end)
 
