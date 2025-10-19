@@ -9,8 +9,14 @@ wait(2)
 print("connecting")
 rq = (queueteleport and true)
 local MarketplaceService = game:GetService("MarketplaceService")
+
 local info = MarketplaceService:GetProductInfo(game.PlaceId)
 print("Place name:", info.Name)
+
+
+if not (info.Name == "Matchmaking") then
+TextChatService.TextChannels.RBXGeneral:SendAsync("[ExClient] - Not supported place: RIVALS]")
+end
 
 print(tostring(rq))
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
@@ -20,17 +26,7 @@ game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
 		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/zakkinajp-cyber/nothing/main/a.lua'))()")
 	end
 end)
-
-unsup = false
-if not (info.Name == "Matchmaking") then
-	TextChatService.TextChannels.RBXGeneral:SendAsync("[ExClient] - Not supported place: RIVALS! go into Matchmaking.")
-	unsup = true -- incase Return doesn't end it
-	return
-end
-
-
-if unsup == false then
-wait(7)
+wait(6)
 str = tostring("実行されたスクリプトを介してゲームのプレイ方法を学習しながら、人工知能エージェントと対戦します。")
 if not isLegacyChat then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str)
@@ -45,7 +41,7 @@ else
     ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str2, "All")
 end
 wait(2)
-str3 = tostring("ボットのランクはメインアカウントではゴールド1です。")
+str3 = tostring("ボットのランキングは、メインアカウントではブロンズ 3 です。1")
 if not isLegacyChat then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str3)
 else
@@ -53,7 +49,7 @@ else
 end
 TeleportCheck = false
 wait(2)
-str4 = tostring("English: It is currently rated \"Gold 1\" in Ranked, on the main account.")
+str4 = tostring("English: It is currently rated \"Bronze 3\" in Ranked, on the main account.")
 if not isLegacyChat then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
 else
@@ -86,4 +82,5 @@ elseif not ((workspace:FindFirstChild("Arena") or (workspace:findFirstChild("Con
     ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
 end
 
-end
+wait(2)
+TextChatService.TextChannels.RBXGeneral:SendAsync("L aura")
