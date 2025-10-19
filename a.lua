@@ -75,8 +75,8 @@ end
 
 wait(5)
 str4 = tostring('Detected unsupported map index. AI may not be able to navigate well.')
-if not isLegacyChat and not ((workspace:FindFirstChild("Arena") or (workspace.findFirstChild("Construction")))) then
+if not isLegacyChat and not ((workspace:FindFirstChild("Arena") or (workspace:findFirstChild("Construction")))) then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
-elseif not ((workspace:FindFirstChild("Arena") or (workspace.findFirstChild("Construction")))) then
+elseif not ((workspace:FindFirstChild("Arena") or (workspace:findFirstChild("Construction")))) then
     ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
 end
