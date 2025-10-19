@@ -9,14 +9,8 @@ wait(2)
 print("connecting")
 rq = (queueteleport and true)
 local MarketplaceService = game:GetService("MarketplaceService")
-
 local info = MarketplaceService:GetProductInfo(game.PlaceId)
 print("Place name:", info.Name)
-
-
-if not (info.Name == "Matchmaking") then
-TextChatService.TextChannels.RBXGeneral:SendAsync("[ExClient] - Not supported place: RIVALS]")
-end
 
 print(tostring(rq))
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
@@ -26,7 +20,17 @@ game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
 		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/zakkinajp-cyber/nothing/main/a.lua'))()")
 	end
 end)
-wait(6)
+
+unsup = false
+if not (info.Name == "Matchmaking") then
+	TextChatService.TextChannels.RBXGeneral:SendAsync("[ExClient] - Not supported place: RIVALS! go into Matchmaking.")
+	unsup = true -- incase Return doesn't end it
+	return
+end
+
+
+if unsup == false then
+wait(7)
 str = tostring("実行されたスクリプトを介してゲームのプレイ方法を学習しながら、人工知能エージェントと対戦します。")
 if not isLegacyChat then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str)
@@ -80,4 +84,6 @@ if not isLegacyChat and not ((workspace:FindFirstChild("Arena") or (workspace:fi
 	TextChatService.TextChannels.RBXGeneral:SendAsync("Supported maps: Arena, Construction")
 elseif not ((workspace:FindFirstChild("Arena") or (workspace:findFirstChild("Construction")))) then
     ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
+end
+
 end
