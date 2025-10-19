@@ -1,6 +1,17 @@
 if not game:IsLoaded() then game.Loaded:Wait() end
-print("Place name:", game.Name)
+print("game Object name:", game.Name)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+local MarketplaceService = game:GetService("MarketplaceService")
+
+local info = MarketplaceService:GetProductInfo(game.PlaceId)
+print("Place name:", info.Name)
+
+
+if not (info.Name == "Matchmaking") then
+TextChatService.TextChannels.RBXGeneral:SendAsync("[ExClient] - Not supported place: RIVALS]")
+end
+
+
 
 TeleportCheck=false
 KeepClientChat = true -- Not need.
@@ -8,7 +19,7 @@ wait(1)
 print("connecting")
 rq = (queueteleport and true)
 print(tostring(rq))
-Players.LocalPlayer.OnTeleport:Connect(function(State)
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
 	if KeepClientChat and (not TeleportCheck) and queueteleport then
 		print("TpCheck running")
 		TeleportCheck = true
@@ -64,6 +75,8 @@ end
 
 wait(5)
 str4 = tostring('Detected unsupported map index. AI may not be able to navigate well.')
-if not isLegacyChat and not ((workspace:FindFirstChild("Arena")) or (workspace.findFirstChild("Construction"))) then
+if not isLegacyChat and not ((workspace:FindFirstChild("Arena") or (workspace.findFirstChild("Construction"))) then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
+else if not ((workspace:FindFirstChild("Arena") or (workspace.findFirstChild("Construction"))
+    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
 end
