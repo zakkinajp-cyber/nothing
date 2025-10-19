@@ -41,7 +41,7 @@ else
     ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str2, "All")
 end
 wait(2)
-str3 = tostring("ボットのランキングは、メインアカウントではブロンズ 3 です。1")
+str3 = tostring("ボットのランクはメインアカウントではゴールド1です。")
 if not isLegacyChat then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str3)
 else
@@ -49,7 +49,7 @@ else
 end
 TeleportCheck = false
 wait(2)
-str4 = tostring("English: It is currently rated \"Bronze 3\" in Ranked, on the main account.")
+str4 = tostring("English: It is currently rated \"Gold 1\" in Ranked, on the main account.")
 if not isLegacyChat then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
 else
