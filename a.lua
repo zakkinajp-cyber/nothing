@@ -26,7 +26,7 @@ game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
 		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/zakkinajp-cyber/nothing/main/a.lua'))()")
 	end
 end)
-wait(8)
+wait(6)
 str = tostring("実行されたスクリプトを介してゲームのプレイ方法を学習しながら、人工知能エージェントと対戦します。")
 if not isLegacyChat then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str)
@@ -73,10 +73,11 @@ else
     ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
 end
 
-wait(5)
+wait(10)
 str4 = tostring('Detected unsupported map index. AI may not be able to navigate well.')
 if not isLegacyChat and not ((workspace:FindFirstChild("Arena") or (workspace:findFirstChild("Construction")))) then
     TextChatService.TextChannels.RBXGeneral:SendAsync(str4)
+	TextChatService.TextChannels.RBXGeneral:SendAsync("Supported maps: Arena, Construction")
 elseif not ((workspace:FindFirstChild("Arena") or (workspace:findFirstChild("Construction")))) then
     ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str4, "All")
 end
